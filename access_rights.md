@@ -4,7 +4,7 @@ title: Access rights
 
 # Problem Statement
 
-You are trying to create a permission based filesystem access for the new unix-inspired Operating System you are developing. The requirements for this system is given below.
+You are trying to create a permission based filesystem access for the new unix-inspired Operating System you are developing. The requirements for this system is as given below.
 
 For each file there is a known set of operations which may be applied to it:
 write W,
@@ -14,6 +14,33 @@ execute X.
 The first line contains the number N — the number of files contained in the filesystem. The following N lines contain the file names and allowed operations with them, separated by spaces. The next line contains an integer M — the number of operations to the files. In the last M lines specify the operations that are requested for files. One file can be requested many times.
 
 For each request your program should return OK if the requested operation is valid or Access denied if the operation is invalid.
+
+**Input Format:** An integer N, followed by N lines containing the file names and permissions. Then an integer M on the next line, followed by M lines specifying operation requests on the files.
+
+**Output Format:** The response to each of the M requests, one per line, print `OK` if the requested operation is allowed or `Access denied` if it is disallowed.
+
+## Sample Input
+```
+4
+helloworld.exe R X
+pinglog W R
+nya R
+goodluck X W R
+5
+read nya
+write helloworld.exe
+execute nya
+read pinglog
+write pinglog
+```
+## Sample Output
+```
+OK
+Access denied
+Access denied
+OK
+OK
+```
 
 # Solution
 ```python test.py  -r 'python test.py'
